@@ -21,11 +21,11 @@ open class DevmindKotlinApplication{
 
     @Bean
     open fun init(companyRepository: CompanyRepository, workerRepository: WorkerRepository) = CommandLineRunner {
-        companyRepository.createTable()
-        companyRepository.deleteAll()
-
         workerRepository.createTable()
         workerRepository.deleteAll()
+
+        companyRepository.createTable()
+        companyRepository.deleteAll()
 
         val company = companyRepository.create(Company("Dev-Mind"))
         workerRepository.create(Worker("Guillaume", "EHRET", company))

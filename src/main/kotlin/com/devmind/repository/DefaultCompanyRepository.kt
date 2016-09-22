@@ -14,7 +14,7 @@ interface CompanyRepository : CrudRepository<Company, Int>
 
 @Repository
 @Transactional
-open class DefaultCompanyRepository : CompanyRepository {
+class DefaultCompanyRepository : CompanyRepository {
 
     override fun createTable() = SchemaUtils.create(Companies);
 

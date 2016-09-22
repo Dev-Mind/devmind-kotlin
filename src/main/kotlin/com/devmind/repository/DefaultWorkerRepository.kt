@@ -14,7 +14,7 @@ interface WorkerRepository : CrudRepository<Worker, Int>
 
 @Repository
 @Transactional
-open class DefaultWorkerRepository(val companyRepository: CompanyRepository) : WorkerRepository {
+class DefaultWorkerRepository(val companyRepository: CompanyRepository) : WorkerRepository {
 
     override fun createTable() = SchemaUtils.create(Workers);
 
